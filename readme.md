@@ -59,6 +59,122 @@ All enemies scale 15% stronger per battle won.
 ```bash
 g++ main.cpp Character.cpp Enemy.cpp Combat.cpp Item.cpp -o game.exe
 ./game.exe
+```
+
+**Linux/macOS:**
+```bash
+g++ main.cpp Character.cpp Enemy.cpp Combat.cpp Item.cpp -o game
+./game
+```
+
+## How to Play
+
+### Starting a New Game
+1. Run the executable
+2. Choose "New Game" if no save exists
+3. Enter your character name
+4. You start with:
+   - 100 HP
+   - 15 base attack
+   - 5 base defense
+   - 2 health potions
+   - 1 rusty sword
+
+### Main Menu Options
+1. **Fight Enemy** - Enter combat with a random enemy
+2. **View Stats** - See your current stats, level, and Remnant
+3. **View Inventory** - Manage items and equipment
+4. **Level Up** - Spend Remnant to upgrade stats
+5. **View Equipment** - Check equipped weapon and armor
+6. **Rest** - Fully restore HP (free at bonfire)
+7. **Save Game** - Save progress to file
+8. **Quit** - Exit (option to save before quitting)
+
+### Combat Tips
+- **Early game:** Focus on Strength and Vitality
+- **Mid game:** Add Dexterity for combos or Luck for crits
+- **Against Dragon:** Need at least level 5-6 with good equipment
+- **Defend strategically:** Use when low HP and enemy is about to attack
+- **Save Remnant:** Don't spend all your Remnant immediately—save for bigger upgrades
+
+### Recommended Builds
+
+**Glass Cannon (High Risk/High Reward):**
+- Max Strength + Luck
+- Rely on crits to burst down enemies
+- Low survivability
+
+**Tank (Safe & Steady):**
+- Max Vitality + Strength
+- High HP pool to survive longer fights
+- Slower progression
+
+**Combo Master (Skill-based):**
+- Max Dexterity + Luck
+- Chain attacks with high crit chance
+- Fun but RNG-dependent
+
+## File Structure
+TextRPG/
+├── main.cpp          # Game loop and main menu
+├── Character.h/cpp   # Player class with stats, inventory, leveling
+├── Enemy.h/cpp       # Enemy class with AI
+├── Combat.h/cpp      # Battle system
+├── Item.h/cpp        # Item system (potions, weapons, armor)
+├── savegame.txt      # Save file (auto-generated)
+└── README.md         
+
+## Save System
+
+Progress is saved to `savegame.txt` in the same directory as the executable.
+
+**Saved data includes:**
+- Character name, HP, stats
+- Current level and stat points
+- Equipped weapon and armor
+- Inventory items
+- Battles won
+- Remnant count
+
+## Technical Details
+
+### Combat Formula
+- **Damage dealt:** `(Attack + Random(0-4)) - Enemy Defense`
+- **Critical hit:** `Damage × 2`
+- **Defend:** `Incoming Damage ÷ 2`
+- **Combo:** Second attack with independent crit roll
+
+### Enemy AI
+- **High HP (>30%):** Always attacks
+- **Low HP (<30%):** 40% chance to defend, 60% attack
+
+### Scaling
+- **Enemy stats:** `Base × (1 + Battles Won × 0.15)`
+- **Level cost:** `50 × (1.5 ^ Current Level)`
+
+## Known Limitations
+- Console-only (no graphics)
+- Single save slot
+- No skill tree or magic system
+- Limited enemy variety (4 types)
+
+## Future Improvements (If Expanding)
+- Multiple enemy types per tier
+- Boss-specific mechanics
+- Magic/spell system
+- Skill trees
+- Multiple save slots
+- ASCII art for enemies
+- Status effects (poison, burn, stun)
+- Dungeon/area system
+
+## Credits
+
+**Developer:** Raihan(chyonma)
+**GitHub:** [github.com/chyonma](https://github.com/chyonma)  
+**Inspiration:** Dark Souls series  
+**Built with:** C++, vanilla standard library  
 
 ## License
+
 Free to use, modify, and distribute.
