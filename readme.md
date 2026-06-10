@@ -166,14 +166,7 @@ Progress is saved to `savegame.txt` in the same directory as the executable.
 - Multiple save slots
 - ASCII art for enemies
 - Status effects (poison, burn, stun)
-- Dungeon/area system
-
-## Credits
-
-**Developer:** Raihan(chyonma)
-**GitHub:** [github.com/chyonma](https://github.com/chyonma)  
-**Inspiration:** Dark Souls series  
-**Built with:** C++, vanilla standard library  
+- Dungeon/area system  
 
 ## License
 
