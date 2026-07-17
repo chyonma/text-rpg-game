@@ -149,8 +149,8 @@ Progress is saved to `savegame.txt` in the same directory as the executable.
 - **Low HP (<30%):** 40% chance to defend, 60% attack
 
 ### Scaling
-- **Enemy stats:** ` Base × (1 + Battles Won × 0.15)`
-- **Level cost:**  `50 × (1.5 ^ Current Level)`
+- **Enemy stats:** `  Base × (1 + Battles Won × 0.15)`
+- **Level cost:** `   50 × (1.5 ^ Current Level)`
 
 ## Known Limitations
 - Console-only (no graphics)
